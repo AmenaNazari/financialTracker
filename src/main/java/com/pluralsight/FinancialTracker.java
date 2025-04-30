@@ -293,6 +293,9 @@ public class FinancialTracker {
                     // Generate a report for all transactions within the previous year,
                     // including the date, time, description, vendor, and amount for each transaction.
                     case "5":
+                        System.out.print("Enter vendor name: ");
+                        String vendor = scanner.nextLine();
+                        filterTransactionsByVendor(vendor
 
                         break;
                     // Prompt the user to enter a vendor name, then generate a report for all transactions
@@ -300,6 +303,7 @@ public class FinancialTracker {
                     case "0":
                         running = false;
 
+                        System.out.println("Invalid option");
                     default:
 
                         break;
