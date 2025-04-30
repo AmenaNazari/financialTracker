@@ -263,11 +263,18 @@ public class FinancialTracker {
 
                         break;
                         LocalDare (firstDayofMonth= LocalDate.now().withDayofMonth(1));
-
+                    LocalDate today = LocalDate.now();
+                    for (Transaction t : transactions) {
+                        LocalDate txDate = LocalDate.parse(t.getDate());
+                        if (txDate.getYear() == today.getYear() && txDate.getMonth() == today.getMonth()) {
+                            printTransaction(t);
+                        }
+                    }
+                }
                     // Generate a report for all transactions within the current month,
                     // including the date, time, description, vendor, and amount for each transaction.
                     case "2":
-
+                        reportPreviousMonth();
                         break;
                     // Generate a report for all transactions within the previous month,
                     // including the date, time, description, vendor, and amount for each transaction.
