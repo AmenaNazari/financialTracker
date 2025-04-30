@@ -310,6 +310,15 @@ public class FinancialTracker {
                 }
             }
         }
+    private static void reportMonthToDate() {
+        LocalDate today = LocalDate.now();
+        for (Transaction t : transactions) {
+            LocalDate txDate = LocalDate.parse(t.getDate());
+            if (txDate.getYear() == today.getYear() && txDate.getMonth() == today.getMonth()) {
+                printTransaction(t);
+            }
+        }
+    }
 
 
         private static void filterTransactionsByDate (LocalDate startDate, LocalDate endDate){
