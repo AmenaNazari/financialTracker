@@ -204,6 +204,12 @@ public class FinancialTracker {
     }
 
     private static void displayLedger() {
+            System.out.println("All Transactions:");
+            System.out.println("Date       | Time     | Description            | Vendor                | Amount");
+            for (Transaction t : transactions) {
+                System.out.printf("%-10s | %-8s | %-22s | %-20s | %10.2f\n",
+                        t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+        }
 
     }
     // This method should display a table of all transactions in the `transactions` ArrayList.
