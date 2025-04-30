@@ -279,12 +279,15 @@ public class FinancialTracker {
                     // Generate a report for all transactions within the previous month,
                     // including the date, time, description, vendor, and amount for each transaction.
                     case "3":
+                        reportYearToDate();
 
                         break;
+
                     // Generate a report for all transactions within the current year,
                     // including the date, time, description, vendor, and amount for each transaction.
 
                     case "4":
+                        reportPreviousYear();
 
                         break;
                     // Generate a report for all transactions within the previous year,
