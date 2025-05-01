@@ -7,10 +7,11 @@ transactions for a business or for personal use.
 
 ## User Stories
 
-As a user, I want to be able to input my data, so that the application can process it accordingly.
-As a user, I want to receive immediate feedback, so I can understand what to do next.
-As a user, I want to view reports for specific time periods, so I can analyze my finances.
-As a user, I want to search by vendor, so I can track transactions more easily.
+- As a user, I want to be able to input my data, so that the application can process it accordingly.
+- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a user, I want to view reports for specific time periods, so I can analyze my finances.
+- As a user, I want to search by vendor, so I can track transactions more easily.
+
 ## Setup
 
 Instructions on how to set up and run the project using IntelliJ IDEA.
@@ -43,11 +44,10 @@ No external libraries used (pure Java console app)
 
 ## Future Work
 
-Java – Version 17
-No external libraries used (pure Java console app)Add ability to delete/edit existing transactions
-Support recurring payments or income
-Implement a database instead of file-based storage
-Export reports to CSV or PDF
+- Add ability to delete/edit existing transactions
+- Support recurring payments or income
+- Implement a database instead of file-based storage
+- Export reports to CSV or PDF
 
 ## Resources
 
@@ -60,6 +60,7 @@ List resources such as tutorials, articles, or documentation that helped you dur
 ## Team Members
 
 Amena Nazari – Developer
+
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:

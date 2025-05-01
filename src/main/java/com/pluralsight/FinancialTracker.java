@@ -70,7 +70,7 @@ public class FinancialTracker {
                 String[] parts = line.split("\\|");
 
                 if (parts.length == 5) {
-                    String date = parts[0];
+                    LocalDate date = LocalDate.parse(parts[0],DATE_FORMATTER);
                     String time = parts[1];
                     String description = parts[2];
                     String vendor = parts[3];
@@ -128,7 +128,7 @@ public class FinancialTracker {
 
     private static void saveTransaction(Transaction transaction) {
         try (FileWriter writer = new FileWriter(FILE_NAME, true)) {
-            writer.write(transaction.toCsvString() + "\n");
+            writer.write(transaction.toString() + "\n");
         } catch (IOException e) {
             System.out.println("Error saving transaction: " + e.getMessage());
         }
@@ -308,7 +308,7 @@ public class FinancialTracker {
     private static void reportMonthToDate() {
         LocalDate today = LocalDate.now();
         for (Transaction t : transactions) {
-            LocalDate txDate = LocalDate.parse(t.getDate());
+            LocalDate txDate = t.getDate();
             if (txDate.getYear() == today.getYear() && txDate.getMonth() == today.getMonth()) {
                 printTransaction(t);
             }
@@ -353,7 +353,7 @@ public class FinancialTracker {
         boolean found = false;
 
         for (Transaction t : transactions) {
-            if (t.getVendor().toLowerCase().contains(vendorInput)) {
+            if (t.getVendor().equalsIgnoreCase(vendorInput)) {
                 printTransaction(t);
                 found = true;
             }
