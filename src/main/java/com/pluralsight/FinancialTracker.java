@@ -2,6 +2,7 @@
 package com.pluralsight;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -70,8 +71,8 @@ public class FinancialTracker {
                 String[] parts = line.split("\\|");
 
                 if (parts.length == 5) {
-                    LocalDate date = LocalDate.parse(parts[0],DATE_FORMATTER);
-                    String time = parts[1];
+                    LocalDate date = LocalDate.parse(parts[0], DATE_FORMATTER);
+                    LocalTime time = LocalTime.parse(parts[1], TIME_FORMATTER);
                     String description = parts[2];
                     String vendor = parts[3];
                     double amount = Double.parseDouble(parts[4]);
@@ -100,10 +101,13 @@ public class FinancialTracker {
     private static void addDeposit(Scanner scanner) {
 
         System.out.print("Enter date (yyyy-MM-dd): ");
-        String date = scanner.nextLine();
+        String dateInput = scanner.nextLine();
+        LocalDate date = LocalDate.parse(dateInput, DATE_FORMATTER);
+
 
         System.out.print("Enter time (HH:mm:ss): ");
-        String time = scanner.nextLine();
+        String timeInput = scanner.nextLine();
+        LocalTime time = LocalTime.parse(timeInput, TIME_FORMATTER);
 
         System.out.print("Enter description: ");
         String description = scanner.nextLine();
@@ -144,10 +148,12 @@ public class FinancialTracker {
 
     private static void addPayment(Scanner scanner) {
         System.out.print("Enter date (yyyy-MM-dd): ");
-        String date = scanner.nextLine();
+        String dateInput = scanner.nextLine();
+        LocalDate date = LocalDate.parse(dateInput, DATE_FORMATTER);
 
         System.out.print("Enter time (HH:mm:ss): ");
-        String time = scanner.nextLine();
+        String timeInput = scanner.nextLine();
+        LocalTime time = LocalTime.parse(timeInput, TIME_FORMATTER);
 
         System.out.print("Enter description: ");
         String description = scanner.nextLine();
@@ -217,9 +223,9 @@ public class FinancialTracker {
     private static void displayLedger() {
         System.out.println("All Transactions:");
         System.out.println("Date       | Time     | Description            | Vendor                | Amount");
-        for (Transaction t : transactions) {
+        for (Transaction tree : transactions) {
             System.out.printf("%-10s | %-8s | %-22s | %-20s | %10.2f\n",
-                    t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+                    tree.getDate(), tree.getTime(), tree.getDescription(), tree.getVendor(), tree.getAmount());
         }
     }
     // This method should display a table of all transactions in the `transactions` ArrayList.
@@ -229,10 +235,10 @@ public class FinancialTracker {
     private static void displayDeposits() {
         System.out.println("Deposits:");
         System.out.println("Date       | Time     | Description            | Vendor                | Amount");
-        for (Transaction t : transactions) {
-            if (t.getAmount() > 0) {
+        for (Transaction tree : transactions) {
+            if (tree.getAmount() > 0) {
                 System.out.printf("%-10s | %-8s | %-22s | %-20s | %10.2f\n",
-                        t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+                        tree.getDate(), tree.getTime(), tree.getDescription(), tree.getVendor(), tree.getAmount());
             }
         }
     }
@@ -307,10 +313,10 @@ public class FinancialTracker {
 
     private static void reportMonthToDate() {
         LocalDate today = LocalDate.now();
-        for (Transaction t : transactions) {
-            LocalDate txDate = t.getDate();
+        for (Transaction tree : transactions) {
+            LocalDate txDate = tree.getDate();
             if (txDate.getYear() == today.getYear() && txDate.getMonth() == today.getMonth()) {
-                printTransaction(t);
+                printTransaction(tree);
             }
         }
     }
@@ -319,30 +325,30 @@ public class FinancialTracker {
         LocalDate today = LocalDate.now();
         LocalDate firstDayThisMonth = today.withDayOfMonth(1);
         LocalDate firstDayLastMonth = firstDayThisMonth.minusMonths(1);
-        for (Transaction t : transactions) {
-            LocalDate txDate = LocalDate.parse(t.getDate());
+        for (Transaction tree : transactions) {
+            LocalDate txDate = tree.getDate();
             if (txDate.getYear() == firstDayLastMonth.getYear() && txDate.getMonth() == firstDayLastMonth.getMonth()) {
-                printTransaction(t);
+                printTransaction(tree);
             }
         }
     }
 
     private static void reportYearToDate() {
         int currentYear = LocalDate.now().getYear();
-        for (Transaction t : transactions) {
-            LocalDate txDate = LocalDate.parse(t.getDate());
+        for (Transaction tree : transactions) {
+            LocalDate txDate = tree.getDate();
             if (txDate.getYear() == currentYear) {
-                printTransaction(t);
+                printTransaction(tree);
             }
         }
     }
 
     private static void reportPreviousYear() {
         int previousYear = LocalDate.now().getYear() - 1;
-        for (Transaction t : transactions) {
-            LocalDate txDate = LocalDate.parse(t.getDate());
+        for (Transaction tree : transactions) {
+            LocalDate txDate = tree.getDate();
             if (txDate.getYear() == previousYear) {
-                printTransaction(t);
+                printTransaction(tree);
             }
         }
     }
@@ -352,9 +358,9 @@ public class FinancialTracker {
 
         boolean found = false;
 
-        for (Transaction t : transactions) {
-            if (t.getVendor().equalsIgnoreCase(vendorInput)) {
-                printTransaction(t);
+        for (Transaction tree : transactions) {
+            if (tree.getVendor().equalsIgnoreCase(vendorInput)) {
+                printTransaction(tree);
                 found = true;
             }
         }
@@ -366,9 +372,9 @@ public class FinancialTracker {
     }
 
 
-    private static void printTransaction(Transaction t) {
+    private static void printTransaction(Transaction tree) {
         System.out.printf("%-10s | %-8s | %-22s | %-20s | %10.2f\n",
-                t.getDate(), t.getTime(), t.getDescription(), t.getVendor(), t.getAmount());
+                tree.getDate(), tree.getTime(), tree.getDescription(), tree.getVendor(), tree.getAmount());
     }
 
 
