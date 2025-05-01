@@ -41,7 +41,7 @@ No external libraries used (pure Java console app)
 
 
 
-![Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)
+[Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)
 
 ## Future Work
 
@@ -55,8 +55,9 @@ Export reports to CSV or PDF
 
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
-- [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- [Youtube](https://youtu.be/r59xYe3Vyks?feature=shared)
+- [google](https://g.co/doodle/nsusqhf?kgs=d41d44cc31203456)
+- [AI](https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_nonbrand&utm_campaign=DEPT_SEM_Google_NonBrand_Acquisition_NAMER_US_Consumer_CPA_BAU_Generic-Mix&utm_term=ai&gad_source=1&gclid=EAIaIQobChMI89-tiuGCjQMV1sKfCR1CESOgEAAYASAAEgIhVPD_BwE)
 
 ## Team Members
 
