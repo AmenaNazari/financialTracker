@@ -5,8 +5,6 @@
 This application can track all financial
 transactions for a business or for personal use.
 
-![Class Diagram](path/to/your/class_diagram.png)
-
 ## User Stories
 
 As a user, I want to be able to input my data, so that the application can process it accordingly.
