@@ -51,7 +51,7 @@ No external libraries used (pure Java console app)
 
 
 
-[Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)
+[Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)![img_1.png](img_1.png)
 
 ## Future Work
 
