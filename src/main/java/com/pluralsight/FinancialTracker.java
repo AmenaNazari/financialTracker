@@ -312,46 +312,85 @@ public class FinancialTracker {
     }
 
     private static void reportMonthToDate() {
+        System.out.println("=== Month To Date Transactions ===");
         LocalDate today = LocalDate.now();
+        boolean found = false;
+
         for (Transaction tree : transactions) {
             LocalDate txDate = tree.getDate();
             if (txDate.getYear() == today.getYear() && txDate.getMonth() == today.getMonth()) {
                 printTransaction(tree);
+                found = true;
             }
+        }
+
+        if (!found) {
+            System.out.println("No transactions found for this month.");
         }
     }
 
     private static void reportPreviousMonth() {
+        System.out.println("\n=== Previous Month Transactions ===");
         LocalDate today = LocalDate.now();
         LocalDate firstDayThisMonth = today.withDayOfMonth(1);
         LocalDate firstDayLastMonth = firstDayThisMonth.minusMonths(1);
+        boolean found = false;
+
         for (Transaction tree : transactions) {
             LocalDate txDate = tree.getDate();
             if (txDate.getYear() == firstDayLastMonth.getYear() && txDate.getMonth() == firstDayLastMonth.getMonth()) {
                 printTransaction(tree);
+                found = true;
             }
+        }
+
+        if (!found) {
+            System.out.println("No transactions found for the previous month.");
         }
     }
 
+
+
     private static void reportYearToDate() {
+        System.out.println("\n=== Year To Date Transactions ===");
         int currentYear = LocalDate.now().getYear();
+        boolean found = false;
+
         for (Transaction tree : transactions) {
             LocalDate txDate = tree.getDate();
             if (txDate.getYear() == currentYear) {
                 printTransaction(tree);
+                found = true;
             }
+        }
+
+        if (!found) {
+            System.out.println("No transactions found for the current year.");
         }
     }
 
+
+
+
     private static void reportPreviousYear() {
+        System.out.println("\n=== Previous Year Transactions ===");
         int previousYear = LocalDate.now().getYear() - 1;
+        boolean found = false;
+
         for (Transaction tree : transactions) {
             LocalDate txDate = tree.getDate();
             if (txDate.getYear() == previousYear) {
                 printTransaction(tree);
+                found = true;
             }
         }
+
+        if (!found) {
+            System.out.println("No transactions found for the previous year.");
+        }
     }
+
+
     private static void searchByVendor(Scanner scanner) {
         System.out.print("Enter vendor name to search: ");
         String vendorInput = scanner.nextLine().trim().toLowerCase();
