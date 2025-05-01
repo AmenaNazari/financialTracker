@@ -1,26 +1,26 @@
-# Project Title
+# Accounting Ledger Application
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+This application can track all financial
+transactions for a business or for personal use.
 
 ![Class Diagram](path/to/your/class_diagram.png)
 
 ## User Stories
 
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
-
+As a user, I want to be able to input my data, so that the application can process it accordingly.
+As a user, I want to receive immediate feedback, so I can understand what to do next.
+As a user, I want to view reports for specific time periods, so I can analyze my finances.
+As a user, I want to search by vendor, so I can track transactions more easily.
 ## Setup
 
 Instructions on how to set up and run the project using IntelliJ IDEA.
 
 ### Prerequisites
 
-- IntelliJ IDEA: Ensure you have IntelliJ IDEA installed, which you can download from [here](https://www.jetbrains.com/idea/download/).
-- Java SDK: Make sure Java SDK is installed and configured in IntelliJ.
+IntelliJ IDEA: `[Download here](https://www.jetbrains.com/idea/)
+Java SDK (Java 17 or later)
 
 ### Running the Application in IntelliJ
 
@@ -34,21 +34,22 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+Java – Version 17
+No external libraries used (pure Java console app)
 
 ## Demo
 
-Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
 
-![Application Screenshot](path/to/your/screenshot.png)
+
+![Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)
 
 ## Future Work
 
-Outline potential future enhancements or functionalities you might consider adding:
-
-- Additional feature to be developed.
-- Improvement of current functionalities.
+Java – Version 17
+No external libraries used (pure Java console app)Add ability to delete/edit existing transactions
+Support recurring payments or income
+Implement a database instead of file-based storage
+Export reports to CSV or PDF
 
 ## Resources
 
@@ -59,13 +60,11 @@ List resources such as tutorials, articles, or documentation that helped you dur
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
-
+Amena Nazari – Developer
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
+- Thank you to Maroun Raymond for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
  
