@@ -62,7 +62,11 @@ List resources such as tutorials, articles, or documentation that helped you dur
 - [Youtube](https://youtu.be/r59xYe3Vyks?feature=shared)
 - [google](https://g.co/doodle/nsusqhf?kgs=d41d44cc31203456)
 - [AI](https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_nonbrand&utm_campaign=DEPT_SEM_Google_NonBrand_Acquisition_NAMER_US_Consumer_CPA_BAU_Generic-Mix&utm_term=ai&gad_source=1&gclid=EAIaIQobChMI89-tiuGCjQMV1sKfCR1CESOgEAAYASAAEgIhVPD_BwE)
-
+- [W3 School](https://www.w3schools.com/java/java_date.asp)
+- [visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial)
+- [Apache NetBeans ](https://netbeans.apache.org/tutorial/main/kb/docs/java/javase-intro/)
+- [CodeGym](https://codegym.cc/groups/posts/java-localdate-class)
+- [Baedung](https://www.baeldung.com/java-creating-localdate-with-values)
 ## Team Members
 
 Amena Nazari – Developer
