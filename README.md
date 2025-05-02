@@ -54,12 +54,6 @@ No external libraries used (pure Java console app)
 [Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)![img_1.png](img_1.png)![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 
-## Future Work
-
-- Add ability to delete/edit existing transactions
-- Support recurring payments or income
-- Implement a database instead of file-based storage
-- Export reports to CSV or PDF
 
 ## Resources
 
