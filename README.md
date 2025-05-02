@@ -1,4 +1,4 @@
-# Accounting Ledger Application
+# Financial Tracker Application 
 
 ## Description of the Project
 
@@ -52,6 +52,7 @@ No external libraries used (pure Java console app)
 
 
 [Application Screenshot](path/to/your/screenshot.png)![img.png](img.png)![img_1.png](img_1.png)![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
 ## Future Work
 
