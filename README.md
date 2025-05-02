@@ -4,7 +4,7 @@
 
 This Java console-based application is a Financial Tracker designed to help users record, view, and manage their financial transactions such as deposits and payments. It provides a simple, interactive command-line interface for inputting transaction details (date, time, vendor, description, amount) and saving them persistently to a file.
 
-The core purpose of the application is to assist individuals—especially students, freelancers, or anyone managing personal finances—in keeping track of where their money goes and when. The tool is lightweight and does not require any database setup or internet connection, making it easy to use and maintain.
+The core purpose of the application is to assist individuals—especially students, freelancers, or anyone managing personal finances—in keeping track of where their money goes and when. 
 
 The application supports:
 
