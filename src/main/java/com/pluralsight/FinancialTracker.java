@@ -6,9 +6,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 
 public class FinancialTracker {
@@ -57,20 +58,16 @@ public class FinancialTracker {
         scanner.close();
     }
 
-    public static void loadTransactions(String fileName) {
-        try {
-            File file = new File(fileName);
-            if (!file.exists()) {
-                file.createNewFile();
-                return;
-            }
 
-            Scanner fileScanner = new Scanner(file);
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine();
+
+    private static void loadTransactions(String fileName) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
                 String[] parts = line.split("\\|");
+                if (parts.length != 5) continue;
 
-                if (parts.length == 5) {
+                try {
                     LocalDate date = LocalDate.parse(parts[0], DATE_FORMATTER);
                     LocalTime time = LocalTime.parse(parts[1], TIME_FORMATTER);
                     String description = parts[2];
@@ -79,14 +76,15 @@ public class FinancialTracker {
 
                     Transaction transaction = new Transaction(date, time, description, vendor, amount);
                     transactions.add(transaction);
+                } catch (Exception e) {
+                    // Skip invalid line
                 }
             }
-
-            fileScanner.close();
-        } catch (Exception e) {
-            System.out.println("Error loading transactions: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading transactions file: " + e.getMessage());
         }
     }
+
 
     // This method should load transactions from a file with the given file name.
     // If the file does not exist, it should be created.
